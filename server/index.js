@@ -10,6 +10,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { register } from "./controllers/auth.js";
 import authRoutes from "./routes/auth.js";
+import userRoutes from "./routes/users.js";
 
 /* CONFIGURATIONS */
 const __filename = fileURLToPath(import.meta.url);
@@ -42,6 +43,7 @@ app.post("/auth/register", upload.single("picture"), register);
 
 /* ROUTES */
 app.use("/auth", authRoutes);
+app.use("/users", userRoutes);
 
 const PORT = 3001 || 6001;
 const URL = 'mongodb+srv://zainabriz0027:L9s1p7HzRN270X8j@cluster0.psbro4c.mongodb.net/?retryWrites=true&w=majority';
